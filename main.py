@@ -66,14 +66,16 @@ while game_on:
             if abs(block.ycor() - ball.ycor()) <= 30:
                 blocks.break_block(block)
                 ball.bounce_y()
-                ball.detect_hits(block.color()[0])
+                # Increase speed and reflect that on the scoreboard
+                scoreboard.increase_speed(ball.detect_hits(block.color()[0]))
                 scoreboard.increase_score(block.point)
         # Check if collision is from the sides
         elif block.ycor() - 20 <= ball.ycor() <= block.ycor() + 20:
             if abs(block.xcor() - ball.xcor()) <= 60:
                 blocks.break_block(block)
                 ball.bounce_x()
-                ball.detect_hits(block.color()[0])
+                # Increase speed and reflect that on the scoreboard
+                scoreboard.increase_speed(ball.detect_hits(block.color()[0]))
                 scoreboard.increase_score(block.point)
 
     # Check lives and blocks on the screen:

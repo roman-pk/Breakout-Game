@@ -2,13 +2,8 @@ from turtle import Turtle
 
 
 class Ball(Turtle):
-    '''
-    This class for the ball
-    '''
+
     def __init__(self):
-        '''
-        This class for the ball 1
-        '''
         super().__init__()
         self.shape("circle")
         self.color("white")
@@ -66,12 +61,16 @@ class Ball(Turtle):
         # Increase speed after 4 and 8 hits
         if self.hits == 4:
             self.speed_increase()
+            return True
 
         elif self.hits == 8:
             self.speed_increase()
+            return True
 
         # Increase speed after collision with orange and red bricks
         if self.orange_hits == 0 and block_color == 'Orange':
             self.speed_increase()
+            return True
         elif self.red_hits == 0 and block_color == 'Red':
             self.speed_increase()
+            return True

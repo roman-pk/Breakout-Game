@@ -31,9 +31,11 @@ class ScoreBoard(Turtle):
         self.lives -= 1
         self.update_scoreboard()
 
-    def increase_speed(self):
-        self.update_scoreboard()
-        pass
+    def increase_speed(self, bool):
+        if bool == True:
+            self.speed += 1
+            self.update_scoreboard()
+
 
     def game_over(self):
         self.goto(0, 0)
