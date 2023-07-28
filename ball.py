@@ -2,7 +2,13 @@ from turtle import Turtle
 
 
 class Ball(Turtle):
+    '''
+    This class for the ball
+    '''
     def __init__(self):
+        '''
+        This class for the ball 1
+        '''
         super().__init__()
         self.shape("circle")
         self.color("white")
